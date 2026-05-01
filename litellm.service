@@ -1,0 +1,18 @@
+# Template for running LiteLLM as a systemd startup service on Linux.
+# Edit the values marked with <> to match your system.
+# Run "which litellm" to find your ExecStart path.
+# If using pyenv, your path will look like /home/<user>/.pyenv/shims/litellm
+
+[Unit]
+Description=LiteLLM OpenAI Proxy
+After=network.target ollama.service
+
+[Service]
+User=<your-username>
+Environment=HOME=/home/<your-username>
+ExecStart=<path-to-litellm> --model ollama/<your-model-name> --port 4000 --host 127.0.0.1
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
