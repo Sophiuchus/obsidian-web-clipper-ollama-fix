@@ -175,6 +175,14 @@ sudo systemctl start litellm
 - Python: managed via pyenv
 
 ---
+## Contributing
+
+If you have tested this on macOS or Windows and can document the setup
+for those platforms — particularly how to autostart LiteLLM on boot —
+contributions and forks are welcome.
+
+Open an issue or submit a pull request.
+
 
 ## Related
 
